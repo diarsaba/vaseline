@@ -1,0 +1,18 @@
+---
+import Layout from "../../components/Layout.astro"
+
+const posts = await Astro.glob('./posts/*.md')
+---
+
+<Layout title ="mi blog" description ="el blog de vaseline">
+    <h1>Blog</h1>
+
+    <img width="100" src="https://images.pexels.com/photos/19065302/pexels-photo-19065302/free-photo-of-glasses-with-cocktails-and-a-slice-of-lime-on-the-rim.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+
+    {
+        posts.map(post=>{
+            return <a href={post.url}>{post.frontmatter.title}</a>
+        })
+    }
+
+</Layout>

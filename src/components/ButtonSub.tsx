@@ -7,7 +7,7 @@ function ButtonSub() {
 
   return (
     <>
-      <button
+      <button className="m-20"
         onClick={() => {
           toast(subscribe ? "Ya esta" : "suscribe");
           setSubscribe(!subscribe);
